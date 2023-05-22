@@ -5,6 +5,7 @@ import Buttons from "./Buttons";
 
 function Cards() {
   const [pokeData, setPokeData] = useState([]);
+  // pokeDox data is sent to pokeinfo component
   const [pokeDox, setPokeDox] = useState({});
   const [pokeInfoClass, setPokeInfoClass] = useState(
     "poke_info_card_container"
@@ -13,9 +14,21 @@ function Cards() {
   const [previous, setPrevious] = useState();
   const [next, setNext] = useState();
   const [isLoading, setIsLoading] = useState();
+  const [isPokeInfoLoading, setIsPokeInfoLoading] = useState(true);
 
-  function pokeInfo(data) {
-    setPokeDox(data);
+  function pokeInfo(data, img) {
+    setIsPokeInfoLoading(true);
+    fetch(data)
+      .then((res) => res.json())
+      .then((data) => {
+        setPokeDox({
+          name: data.name,
+          height: data.height,
+          weight: data.weight,
+          img : img
+        })
+        setIsPokeInfoLoading(false);
+      });
   }
 
   function pokeFun() {
@@ -45,6 +58,7 @@ function Cards() {
                 pokeInfo={pokeInfo}
                 key={index}
                 pokeName={poke.name}
+                poke={poke}
                 pokeImg={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${
                   poke.url.split("/")[poke.url.split("/").length - 2]
                 }.svg`}
@@ -55,6 +69,7 @@ function Cards() {
             setPokeInfoClass={setPokeInfoClass}
             pokeInfoClass={pokeInfoClass}
             pokeDox={pokeDox}
+            isPokeInfoLoading={isPokeInfoLoading}
           />
         </div>
       </>

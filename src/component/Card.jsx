@@ -1,13 +1,9 @@
 import React from 'react'
 
-function Card({ pokeImg, pokeName, pokeInfo, setPokeInfoClass }) {
-
+function Card({ poke, pokeImg, pokeName, pokeInfo, setPokeInfoClass }) {
 
   function handleClick() {
-    pokeInfo({
-      pokeImg,
-      pokeName
-    })
+    pokeInfo(poke.url, pokeImg)
     setPokeInfoClass('poke_info_card_container_active')
   }
 
