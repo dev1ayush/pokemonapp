@@ -15,14 +15,18 @@ function PokeInfo({ pokeDox, pokeInfoClass, setPokeInfoClass, isPokeInfoLoading 
           alt=""
         />
         <h1 className="pokename">Name- {pokeDox.name}</h1>
+        <div>
         <p>Height- {pokeDox.height}</p>
         <p>Weight- {pokeDox.weight}</p>
+        <p>Ability- {`${pokeDox.ability1},${pokeDox.ability2}`}</p>
+        </div>
+        
       </div>
     );
   }
 
   return <div onClick={handleClick} className={pokeInfoClass}>
-    {isPokeInfoLoading ? <p>loading...</p> : loadPokeCard()}
+    {isPokeInfoLoading ? <div className="poke_info_card"><h1>loading...</h1></div> : loadPokeCard()}
   </div>;
 }
 

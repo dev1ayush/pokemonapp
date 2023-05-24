@@ -112,9 +112,28 @@
   width: 400px;
   height: 400px;
   background-color: #fff;
-  margin-top: 2rem;
+  margin-top: 1rem;
   border-radius: 10px 5px 10px 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* for buttons(prev, next) */
+.button{
+  cursor: pointer;
+  margin: 10px;
+  font-size: 10px;
+  padding: 5px;
+}
+
+/* responsivness media quraies */
+
+@media screen and (max-width: 480px) {
+  .poke_info_card{
+    top: 0;
+    height:100%;
+    bottom: 0;
+    margin-top: 0;
+  }
 }

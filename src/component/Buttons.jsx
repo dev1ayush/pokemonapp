@@ -16,8 +16,8 @@ function Buttons({ prev, next, setUrl }) {
   }
   return (
     <div>
-      <button disabled={isPrev} onClick={handlePrev}>prev</button>
-      <button onClick={handleNext}>next</button>
+      <button className="button" disabled={isPrev} onClick={handlePrev}>prev</button>
+      <button className="button" onClick={handleNext}>next</button>
     </div>
   );
 }

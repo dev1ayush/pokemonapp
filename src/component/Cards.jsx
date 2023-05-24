@@ -15,7 +15,8 @@ function Cards() {
   const [next, setNext] = useState();
   const [isLoading, setIsLoading] = useState();
   const [isPokeInfoLoading, setIsPokeInfoLoading] = useState(true);
-
+  
+  // fetching single pokemaon data (height, weight) for poke info card
   function pokeInfo(data, img) {
     setIsPokeInfoLoading(true);
     fetch(data)
@@ -25,12 +26,15 @@ function Cards() {
           name: data.name,
           height: data.height,
           weight: data.weight,
+          ability1: data.abilities[0].ability.name,
+          ability2: data.abilities[1].ability.name,
           img : img
         })
         setIsPokeInfoLoading(false);
       });
   }
-
+  console.log(pokeDox)
+  // fetching pokemon data from poke api
   function pokeFun() {
     setIsLoading(true);
     fetch(url)
@@ -47,6 +51,7 @@ function Cards() {
     pokeFun();
   }, [url]);
 
+  // loading pokemon cards on homepage
   function loadPokemon() {
     return (
       <>
