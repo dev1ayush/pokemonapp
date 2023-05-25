@@ -24,10 +24,10 @@ function Cards() {
       .then((data) => {
         setPokeDox({
           name: data.name,
-          height: data.height,
-          weight: data.weight,
-          ability1: data.abilities[0].ability.name,
-          ability2: data.abilities[1].ability.name,
+          hp: data.stats[0].base_stat, 
+          attack: data.stats[1].base_stat, 
+          defence: data.stats[2].base_stat, 
+          speed: data.stats[5].base_stat, 
           img : img
         })
         setIsPokeInfoLoading(false);

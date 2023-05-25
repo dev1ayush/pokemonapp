@@ -65,6 +65,7 @@
   justify-content: space-between;
   align-items: center;
   margin: 4rem;
+  text-transform: capitalize;
 }
 
 .pokeimg{
@@ -97,16 +98,16 @@
   background-color: rgba(222, 209, 209, 0.6);
   display: none;
 }
-.poke_info_card_container_active{
-  position: absolute;
+ .poke_info_card_container_active{
+   position: absolute;
   top: 0;
   bottom: 0;
   width: 100%;
   display: flex;
   justify-content: center;
   background-color: rgba(222, 209, 209, 0.6);
-}
-.poke_info_card{
+} 
+/* .poke_info_card{
   position: fixed;
   max-width: 100%;
   width: 400px;
@@ -117,6 +118,49 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+} */
+
+/* pokemon card css */
+
+.pokecard-container{
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-transform: capitalize;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+}
+
+.card-header{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card-middle-part{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-middle-part img{
+  height: 100px;
+  width: 100px;
+}
+
+.card-bottom{
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-bottom p{
+  text-align: center;
 }
 
 /* for buttons(prev, next) */
@@ -130,10 +174,8 @@
 /* responsivness media quraies */
 
 @media screen and (max-width: 480px) {
-  .poke_info_card{
+  .pokecard-container{
+    width: 80%;
     top: 0;
-    height:100%;
-    bottom: 0;
-    margin-top: 0;
   }
 }
