@@ -33,7 +33,7 @@ function Cards() {
         setIsPokeInfoLoading(false);
       });
   }
-  console.log(pokeDox)
+  
   // fetching pokemon data from poke api
   function pokeFun() {
     setIsLoading(true);
