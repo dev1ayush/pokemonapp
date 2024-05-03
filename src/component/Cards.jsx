@@ -40,6 +40,7 @@ function Cards() {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
+        console.log(data)
         setPokeData(data.results);
         setNext(data.next);
         setPrevious(data.previous);
